@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/paiment.css" />
+    <link rel="icon" href="../media/img.png" />
+    <link rel="stylesheet" href="../css/color.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a class="btn" href="book.html"> back </a>
+    <header>
+      <h1>test</h1>
+    </header>
+    <main>
+      <form action="#">
+        <p>Coordonnees de la carte</p>
+        <input
+          class="Numero"
+          type="tel"
+          placeholder="Numero"
+          pattern="[0-9]{14,}"
+          required
+          autofocus
+        />
+        <div class="input">
+          <input class="in1" type="tel" placeholder="MM/AA" required />
+          <input class="in2" type="text" placeholder="CVV" required />
+        </div>
+        <p>Titulaire de la carte</p>
+        <input class="in3" type="text" placeholder="Prenom Nom" required />
+        <input class="in3" type="email" placeholder="Email" required />
+        <input type="submit" id="submit" value="achat" />
+        <p style="color: green; opacity: 0" id="message">
+          Merci pour votre engagement. Après vérification, le livre sera envoyé
+          dans votre email☺
+        </p>
+      </form>
+    </main>
+    <script>
+      let h = document.querySelector("h1");
+      let p = document.getElementById("message");
+      let s = document.getElementById("submit");
+      let email = document.querySelector("input[type='email']");
+      h.innerText = localStorage.info;
+      let root = document.documentElement;
+      let red;
+      let black;
+      if (localStorage.c1 && localStorage.c2) {
+        root.style.setProperty("--red", localStorage.c1);
+        root.style.setProperty("--black", localStorage.c2);
+      }
+      s.onclick = () => {
+        if (email.value != "") {
+          p.textContent =
+            "Merci pour votre engagement. Après vérification, le livre sera envoyé dans votre email ☺";
+          p.style.opacity = 1;
+          p.style.color = "green";
+          document.body.style.boxShadow = "0 0 300px green inset";
+          setTimeout(() => {
+            document.body.style.boxShadow = "none";
+            p.style.opacity = 0;
+          }, 5000);
+        } else {
+          p.textContent = "ERROR....";
+          p.style.color = "red";
+          p.style.opacity = 1;
+          document.body.style.boxShadow = "0 0 300px red inset";
+          setTimeout(() => {
+            document.body.style.boxShadow = "none";
+            p.style.opacity = 0;
+          }, 3000);
+        }
+      };
+    </script>
+  </body>
+</html>

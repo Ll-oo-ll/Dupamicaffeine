@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="black">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="icon" href="../media/img.png">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing : border-box;
+            color:white;
+            
+        }
+        
+        body , main{
+            background: linear-gradient(transparent, var(--red));
+            padding:20px;
+            overflow-X: hidden;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            min-height:100vh;
+        
+          }
+        main{
+            background: transparent;
+        }
+        img{
+            width:50px;
+            height:50px;
+            padding:7px;
+            border-radius:50%;
+            border: 4px solid var(--red);
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 7px solid var(--red);
+            box-shadow: 0 10px 30px -10px var(--red);
+            position: absolute;
+            background: var(--black);
+            top: 0;
+            width: 98%;
+           
+        }
+        
+        .plus{
+            color: var(--black);
+            background: var(--red);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 30px;
+            height: 30px;
+            font-weight: 900;
+         animation: ro 3s ease-out 1s infinite ;
+            
+        }
+        .right{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap:30px;
+        }
+        
+        h1{
+            color: var(--red);
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            text-align: center;
+            text-shadow: 0 0 10px var(--red);
+            animation: space 2s infinite ;
+        }
+        a{
+            color: var(--black);
+            background: var(--red);
+            font-weight: 700;
+            padding: 6px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all .4s;
+        }
+        a:hover{
+            transform: scale(1.1);
+             }
+        
+        
+        @media(max-width:800px){
+           header{
+               flex-direction: column;
+               width: 99%;
+               gap:20px;
+               left: 0;
+              
+           } 
+         @media(min-width:900px){
+             form{
+                 transform: scale(2);
+             }
+         }  
+           img{
+               width: 150px;
+               height: 100px;
+               margin: auto;
+               border-radius: 10px;
+               border: none;
+               box-shadow: 0 0 10px var(--red);
+           }
+           h1{
+               text-align: center;
+           }
+           .right{
+               justify-content: space-between;
+               width: 100%;
+           }
+           main{
+               align-items: flex-end;             
+           }
+        }
+        @keyframes ro {
+            60%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(180deg);
+            }
+        }
+        @keyframes space {
+            50%{
+                letter-spacing: 13px;
+            }
+        }
+        form{
+            background:var(--black);
+            height: 400px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 10px;
+            align-items: center;
+            border-top: 20px solid white;
+            border-bottom: 10px solid white;
+            box-shadow: 0px 0px 30px var(--red) ;
+        }
+        h2 , [type="submit"]{
+            text-shadow: 0 0 10px white;
+        }
+        #input , .input{
+            padding: 5px;
+            outline: none;
+            border: 5px solid white;
+            color: white;
+            font-weight: 800;
+            width: 200px;background: var(--red);
+            border-radius: 10px;
+            border-bottom: 9px double white;
+            position: relative;
+            margin: 10px auto;
+        }
+        [type="submit"]{
+            background: linear-gradient(to right , var(--red) 5% , white 5% 10% , var(--red) 20%);
+            color: white;
+            padding: 10px 50px;
+            margin: 20px auto;
+            border:4px solid white ;
+            border-radius: 5px;
+            font-size: 23px;
+            color: white;
+            box-shadow: 0 10px 10px -10px white;
+        }
+        a , h2{
+            color: white;
+        }
+        input::placeholder{
+
+            color: white;
+            font-weight: 800;
+            padding: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            
+        }
+    </style>
+    <title>Sgin Up</title>
+</head>
+<body>
+    <header>
+        <img src="../media/img.png" alt="Music"></img>
+        <h1>MUSIC</h1>
+         <div class="right">
+             <div class="plus">+</div> 
+             <a href="login.html">Login</a>
+         </div>
+    </header>
+    <main>
+        <form action="login.html">
+            <h2>Sign Up</h2>
+           <input id="name" class="input" type="text" pattern="\w{3,}" required placeholder="Your Username">
+        <input id="input" type="email" required placeholder="Your Email">     
+            <input class="input" type="password" pattern="\w{8,}" required placeholder="Creat Password" id="pass">
+            <input type="submit" value="Sign Up" id="sign">
+        </form>
+    </main>
+<script>
+  let input = document.querySelectorAll("input");
+    let head = document.querySelector("header");
+    for(let i = 0 ; i < 3 ;i++){
+        input[i].onfocus = function () {
+            head.style.display = "none"
+        }
+        input[i].onblur = function () {
+            head.style.display = "flex"
+        }
+        
+    }
+    let root = document.documentElement ;
+    let red;
+    let black;
+    if(localStorage.c1 && localStorage.c2 ){
+        root.style.setProperty("--red", localStorage.c1);
+        root.style.setProperty("--black", localStorage.c2) 
+        
+    }
+    let sign = document.getElementById("sign");
+    let name = document.getElementById("name");
+    let email = document.getElementById("input");
+    let pass = document.getElementById("pass");
+    sign.onclick = () => {
+        localStorage.myname = name.value ;
+        localStorage.myemail = email.value ;
+        localStorage.pass = pass.value ;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/color.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .btn {
+        color: var(--red);
+        background: var(--black);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+        font-size: 25px;
+        border-radius: 10px;
+        padding: 5px;
+        z-index: 2;
+      }
+      .btn1 {
+        color: var(--red);
+        background: var(--black);
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-decoration: none;
+        font-size: 25px;
+        border-radius: 10px;
+        padding: 5px;
+        z-index: 2;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--red);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      }
+      .profile {
+        width: 90px;
+        height: 90px;
+        background: var(--black);
+        border: 20px solid var(--black);
+        border-radius: 50%;
+        margin-top: 60px;
+        border-top: 7px double var(--red);
+        border-left: 7px double var(--red);
+        animation: turn .5s linear infinite , prof 2s linear;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+      }
+      .profile:active{
+        animation-duration: 2s;
+        transform: translateY(100px) scale(3);
+      }
+      .profile:active + table{
+        opacity: 0;
+        transition: 0s;
+        
+      }
+      @keyframes prof {
+        0%{
+          transform: translateY(-300px);
+          opacity: 0;
+        }
+        100%{
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+      @keyframes turn {
+        0%{
+          border-right: 20px solid var(--black);
+          border-bottom: 20px solid var(--black);
+          border-top: 7px double var(--red);
+          border-left: 7px double var(--red);
+        }
+        25%{
+          border-left: 20px solid var(--black);
+          border-bottom: 20px solid var(--black);
+          border-top: 7px double var(--red);
+          border-right: 7px double var(--red);
+        }
+        50%{
+          border-left: 20px solid var(--black);
+          border-top: 20px solid var(--black);
+          border-bottom: 7px double var(--red);
+          border-right: 7px double var(--red);
+        }
+        75%{
+          border-right: 20px solid var(--black);
+          border-top: 20px solid var(--black);
+          border-bottom: 7px double var(--red);
+          border-left: 7px double var(--red);
+        }
+        100%{
+          border-right: 20px solid var(--black);
+          border-bottom: 20px solid var(--black);
+          border-top: 7px double var(--red);
+          border-left: 7px double var(--red);
+        }
+      }
+      table{
+        width: 90%;
+        border-spacing: 0;
+        border-radius: 20px;
+        margin-top: 50px;
+        transition: 5s;
+      }
+      td{
+        background: var(--black);
+        padding: 20px;
+        border: 3px solid var(--red);
+        border-top: 7px double var(--red);
+        color: var(--red);
+        font-size: 19px;
+        font-weight: 790;
+        border-radius: 10px;
+
+      }
+      .dot{
+        background: var(--red);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 8px double var(--black);
+      }
+      h1{
+        color: var(--red);
+        font-weight: 900;
+        font-size: 40px;
+        margin-top: 140px;
+        position: relative;
+        width: 700%;
+        text-align: center;
+        background: var(--black);
+        animation: h1 9s linear infinite;
+      }
+      @keyframes h1 {
+        0%{left: -100%;}
+        50%{top: 0;
+        left: 0;}
+        100%{left: 100%;}
+      }
+    </style>
+  </head>
+  <body>
+    <a class="btn" href="index.html"> back </a>
+    <a class="btn1" href="sign.html" id="out"> Log out </a>
+
+    <div class="profile">
+      <div class="dot"></div>
+    </div>
+    <table>
+      <tr>
+        <td>Username</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td id="pass"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td id="email"></td>
+      </tr>
+    </table>
+    <h1>DUPAMICAFFEINE</h1>
+    <script>
+      let name =  document.getElementById("name");
+      let email = document.getElementById("email");
+      let pass = document.getElementById("pass");
+      let root = document.documentElement;
+      let red;
+      let black;
+      if (localStorage.c1 && localStorage.c2) {
+        root.style.setProperty("--red", localStorage.c1);
+        root.style.setProperty("--black", localStorage.c2);
+      }
+      if (localStorage.myname) {
+        name.textContent = localStorage.myname ;
+      }
+      if (localStorage.myemail) {
+        email.textContent = localStorage.myemail ;
+      }
+      if (localStorage.pass) {
+        pass.textContent = localStorage.pass ;
+      }
+      let out = document.getElementById("out");
+      out.onclick = () => {
+        localStorage.myname = " ";
+        localStorage.myemail = " ";
+        localStorage.pass = " ";
+      }
+    </script>
+  </body>
+</html>

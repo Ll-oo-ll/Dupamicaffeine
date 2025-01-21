@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(var(--red), var(--black), var(--red));
+  color: #fff;
+  line-height: 1.6;
+  direction: rtl;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.header {
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2.5em;
+  color: #ffeb3b;
+  animation: glow 2s infinite alternate;
+}
+.cover-image {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+.cover-image:hover {
+  transform: scale(1.05);
+}
+/* تأثيرات النص */
+.section {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.section h2 {
+  color: #ffeb3b;
+  font-size: 1.8em;
+}
+.section p,
+.section ul {
+  color: #e0f7fa;
+  text-align: justify;
+}
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  color: var(--black);
+  background-color: #ffeb3b;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.button:hover {
+  background-color: #ffd600;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b;
+  }
+  to {
+    text-shadow: 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b;
+  }
+}
+h2 {
+  color: var(--black);
+}
+
+.btn {
+  color: var(--red);
+  background: var(--black);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 2;
+}
+.link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

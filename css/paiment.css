@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(var(--red), var(--black), var(--red));
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+h1 {
+  text-align: center;
+  color: var(--black);
+  text-shadow: 0 0 10px yellow;
+}
+main {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-top: 80px;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid var(--black);
+  background: rgba(255, 255, 255, 0.3);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 800px;
+  margin: auto;
+}
+input {
+  width: 300px;
+  padding: 5px;
+  font-size: 19px;
+  border: 2px solid var(--black);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  color: var(--black);
+  height: 50px;
+  transition: all 0.5s;
+}
+input::placeholder {
+  color: yellow;
+}
+.Numero {
+  width: 600px;
+}
+p {
+  color: yellow;
+  font-size: 23px;
+  font-weight: 900;
+}
+input[type="submit"] {
+  background: yellow;
+  border-radius: 20px;
+  margin-top: 70px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.Numero:focus {
+  transform: scale(1.1);
+  border-radius: 10px;
+  border-width: 3px;
+}
+.in3:focus {
+  transform: scale(1.2);
+  border-radius: 10px;
+  border-width: 3px;
+}
+.in1:focus {
+  transform: scale(1.1) translate(-20px);
+  border-radius: 10px;
+  border-width: 3px;
+}
+.in2:focus {
+  transform: scale(1.1) translate(20px);
+  border-radius: 10px;
+  border-width: 3px;
+}
+.btn {
+  color: var(--red);
+  background: var(--black);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 2;
+}

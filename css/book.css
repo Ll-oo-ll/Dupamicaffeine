@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(var(--red), var(--black), var(--red));
+  color: #fff;
+  line-height: 1.6;
+  direction: rtl;
+  overflow-x: hidden;
+}
+main {
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: 800;
+  max-width: 90%;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+main p {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to left, var(--red), var(--black), var(--red));
+}
+
+button {
+  font-size: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  background: linear-gradient(var(--red), var(--black), var(--red));
+  color: yellow;
+  text-shadow: 0 0 10px var(--black);
+  margin: 0 5px;
+}
+footer {
+  background: linear-gradient(to left, var(--red), var(--black), var(--red));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.btn {
+  color: var(--red);
+  background: var(--black);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 2;
+}

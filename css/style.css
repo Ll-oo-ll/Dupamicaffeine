@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(var(--black) 70%, var(--red)) no-repeat;
+  overflow-x: hidden;
+}
+header {
+  padding: 15px;
+  background: var(--red);
+  border: 10px double var(--black);
+  border-radius: 10px;
+  
+}
+h1 {
+  text-transform: uppercase;
+  padding: 5px;
+  background: var(--black);
+  border: 10px double var(--red);
+  text-align: center;
+  border-radius: 10px;
+  text-shadow: 0 0 10px var(--red);
+  letter-spacing: 10px;
+  font-size: 50px;
+  font-weight: 900;
+  border-bottom: 10px solid white;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+h1 > div + div{
+  display: inline;
+  
+}
+h1 a {
+  text-decoration: none;
+  border: none;
+}
+nav {
+  width: 100%;
+  padding: 5px;
+  background: var(--black);
+  border-left: 10px solid white;
+  border-right: 10px solid white;
+  border-bottom: 20px solid var(--red);
+}
+ul {
+  background: var(--red);
+  padding: 20px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 20px 0;
+}
+a {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 30px;
+  padding: 5px;
+  border-bottom: 5px solid white;
+  background: var(--black);
+  border-radius: 10px;
+  transition: 0.6s;
+}
+span {
+  color: var(--red);
+  padding: 2px;
+}
+li:hover {
+  transform: scale(1.1);
+}
+.music {
+  background: var(--black);
+  width: 180px;
+  border-radius: 20px;
+  height: 200px;
+  border: 2px solid var(--red);
+  margin: 10px 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: 0.5s;
+}
+.music:hover {
+  cursor: pointer;
+  transform: scale(0.81);
+}
+.div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: scroll;
+}
+p {
+  text-align: center;
+  transform: scale(1.2);
+}
+.img {
+  width: 100%;
+  height: 70%;
+  background: url("img.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#start {
+  display: none;
+}
+span:active {
+  background: #450003;
+}
+h5 {
+  text-align: center;
+  font-size: 19px;
+  padding: 3px;
+  position: relative;
+  white-space: nowrap;
+  right: -80%;
+  animation: h5 9s linear infinite;
+}
+@keyframes h5 {
+  0% {
+    right: -80%;
+  }
+  40% {
+    right: 40%;
+  }
+  60% {
+    right: 70%;
+  }
+  80% {
+    right: 100%;
+  }
+  100% {
+    right: 140%;
+  }
+}
+@media (min-width: 1024px) {
+  .music {
+    width: 240px;
+    height: 240px;
+    margin: 20px 40px;
+  }
+}
+@media (max-width: 803px) {
+  .color {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.6);
+    gap: 10px;
+  }
+}
+.color {
+  padding: 5px;
+  display: inline;
+}
+input {
+  height: 40px;
+}
+.pup {
+  width: 40%;
+  position: fixed;
+  z-index: 3;
+  background: var(--black);
+  display: flex;
+  padding: 10px;
+  bottom: 30px;
+  right: 0;
+  direction: rtl;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 0 20px -5px var(--red);
+  animation: pup 3s ease-in forwards;
+  cursor: pointer;
+}
+@keyframes pup {
+  0% {
+    right: -1200px;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+.pup img {
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+  margin-left: 30px;
+  margin-right: 5px;
+  border: 2px solid var(--red);
+  border-top: 7px double var(--red);
+}
+.pup h3 {
+  color: var(--red);
+  font-weight: 800;
+}
+.pup .info {
+  display: flex;
+  flex-direction: column;
+}
+.pup p {
+  align-self: flex-end;
+  font-size: 10px;
+}
+.profile{
+  width: 40px;
+  height: 40px;
+  background: var(--red);
+  border-radius: 50%;
+  display: inline-flex;
+ 
+  position: relative;
+}
+@keyframes prof {
+  0%{
+   left:0;
+  }
+  10%{
+    left: 35%;
+  }
+  90%{
+    left: 35%;
+  }
+  100%{
+    left: 70%;
+  }
+}
+.turn1{
+  background: var(--black);
+  width:12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  animation: prof 4s linear infinite alternate;
+}
+.turn2{
+  background: var(--black);
+  width:32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -16px;
+  left: 10%;
+}
